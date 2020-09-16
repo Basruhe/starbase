@@ -15,12 +15,15 @@ export default {
   },
   methods: {
     fetchCharacter() {
-      fetch("http://swapi.co/api/people", {
-        method: "get",
-      }).then((response) => console.log(response));
+      fetch("http://swapi.co/api/people/", {
+        method: "GET",
+      })
+        .then((response) => response.json())
+        .then((json) => console.log(json));
     },
   },
 };
 </script>
 
-// Note: CORS error in console log. run in chrome without web security?
+// Note: CORS error in console log. 
+// Solution: run on firefox, with 'cors everywhere' extenstion active
