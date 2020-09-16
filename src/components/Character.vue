@@ -1,5 +1,5 @@
 <template>
-  <div class>{{character}}</div>
+  <div class @click="switchCharacter">{{character}}</div>
 </template>
 
 <script>
@@ -20,7 +20,7 @@ export default {
     },
     switchCharacter() {
       let random_id = Math.floor(Math.random() * 83) + 1;
-      this.fetchCharacter(random.id);
+      this.fetchCharacter(random_id);
     },
   },
   created() {
